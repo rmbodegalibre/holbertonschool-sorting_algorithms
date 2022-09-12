@@ -1,13 +1,13 @@
 #include "sort.h"
 
 /**
- * swapper - function to swap nodes of a doubly linked list.
+ * to_swp - function to swap nodes of a doubly linked list.
  * @list: doubly linked list
  * @current_node: current node
  * @previous_node: previous node
  */
 
-void swapper(listint_t **list, listint_t *current_node, listint_t *previous_node)
+void to_swp(listint_t **list, listint_t *current_node, listint_t *previous_node)
 {
 	if (previous_node->prev)
 		previous_node->prev->next = current_node;
@@ -45,7 +45,7 @@ void insertion_sort_list(listint_t **list)
 		while (previous_to_current && current_node->n < previous_to_current->n)
 		{
 			previous_to_current->next = current_node->next;
-			swapper(list, current_node, previous_to_current);
+			to_swp(list, current_node, previous_to_current);
 			previous_to_current->prev = current_node;
 			previous_to_current = current_node->prev;
 
