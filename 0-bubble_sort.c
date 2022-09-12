@@ -9,28 +9,28 @@
 
 void bubble_sort(int *array, size_t size)
 {
-    unsigned int cross, position, to_swap, check_order;
+	unsigned int cross, position, to_swap, check_order;
 
-    if (!size || !array || size < 2)
-        return;
+	if (!size || !array || size < 2)
+		return;
 
-    for (cross = 0; cross <= size; cross++)
-    {
-        check_order = 0;
+	for (cross = 0; cross <= size; cross++)
+	{
+		check_order = 0;
 
-        for (position = 0; position < size - 1; position++)
-        {
-            if (array[position] > array[position + 1])
-            {
-                to_swap = array[position];
-                array[position] = array[position + 1];
-                array[position + 1] = to_swap;
-                print_array(array, size);
+		for (position = 0; position < size - 1; position++)
+		{
+			if (array[position] > array[position + 1])
+			{
+				to_swap = array[position];
+				array[position] = array[position + 1];
+				array[position + 1] = to_swap;
+				print_array(array, size);
 
-                check_order = 1;
-            }
-        }
-        if (check_order == 0)
-            break;
-    }
+				check_order = 1;
+			}
+		}
+		if (check_order == 0)
+			break;
+	}
 }
